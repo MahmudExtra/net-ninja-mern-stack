@@ -90,7 +90,10 @@ const updateAWorkout = async (req, res) => {
     //*    },
     //*  };
 
+    // * const data = await Workout.findById(id); // * [get the previous data]
+
     const updateDoc = {
+      // ...data._doc, // * [copy all of the previous data]
       ...req.body,
     };
     const workout = await Workout.findByIdAndUpdate(id, updateDoc, {
